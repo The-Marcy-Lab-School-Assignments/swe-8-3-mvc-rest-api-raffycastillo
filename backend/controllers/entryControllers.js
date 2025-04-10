@@ -1,9 +1,3 @@
-// app.get('/api/entries', serveEntries);
-// app.get('/api/entries/:id', serveEntry);
-// app.post('/api/entries', createEntry);
-// app.patch('/api/entries/:id', updateEntry);
-// app.delete('/api/entries/:id', deleteEntry);
-
 const Journal = require('../models/Journal.js')
 
 const serveEntries = (req, res) => {

@@ -22,8 +22,6 @@ class Journal {
     }
   ];
 
-  // Create and add the new fellow to the "database" (the fellows array)
-  // Rather than using a constructor, we use a static method to create a new fellow
   static create(text, imgSrc='') {
     const newEntry = {
       id: getId(),
@@ -35,7 +33,6 @@ class Journal {
     return newEntry;
   }
 
-  // Get all values from the "database"
   static list() {
     return [...Journal.#entries].map((entry) => {
       return {
@@ -45,7 +42,6 @@ class Journal {
     });
   }
 
-  // Get one value from the "database"
   static find(id) {
     return Journal.#entries.find((entry) => entry.id === id);
   }
@@ -61,7 +57,6 @@ class Journal {
     return entry;
   }
 
-  // Delete one value from the "database"
   static delete(id) {
     const entryIndex = Journal.#entries.findIndex((entry) => entry.id === id);
     if (entryIndex < 0) return false;
@@ -72,14 +67,3 @@ class Journal {
 }
 
 module.exports = Journal;
-
-/*
-Take a moment and play with these class methods. Try the following and
-run this file with `node Fellow.js`:
-
-console.log(Fellow.list())
-console.log(Fellow.find(1))
-console.log(Fellow.editName(1, 'ZO!!'))
-console.log(Fellow.delete(2))
-console.log(Fellow.list())
-*/
