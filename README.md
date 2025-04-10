@@ -1,10 +1,10 @@
 # swe-8-3-mvc-rest-api
 
-Deployment Link: 
+Deployment Link:
 
 ## Overview
 
-The homework this week will be a little bit different! Rather than building something from scratch, you will be "remixing" code found in the `1-fellow-tracker-final/` directory of the repo below to build your own app! 
+The homework this week will be a little bit different! Rather than building something from scratch, you will be "remixing" code found in the `1-fellow-tracker-final/` directory of the repo below to build your own app!
 
 https://github.com/The-Marcy-Lab-School/8-1-0-express-rest-api-model
 
@@ -12,7 +12,7 @@ This repository contains a server application with controllers and a model for m
 
 ### Your Task
 
-You will be tasked with "remixing" the provided application and adjusting it for the domain area of your choice. For example, you may choose to implement a Playlist API that lets users manage a list of songs or a Library API that lets users manage a list of books. 
+You will be tasked with "remixing" the provided application and adjusting it for the domain area of your choice. For example, you may choose to implement a Playlist API that lets users manage a list of songs or a Library API that lets users manage a list of books.
 
 Regardless of your choice, the API should manage a **collection of objects**.
 
@@ -40,7 +40,7 @@ Next, create a `server` directory for your server application and set up the dep
   * `nodemon` (developer dependency)
 * Setup the file structure to match the example repository, updating the file names according to your chosen domain area:
 
-  ``` 
+  ```
   server/
   ├── index.js
   ├── controllers/
@@ -65,28 +65,28 @@ There are a total of 20 total requirements:
 
 ### Model Requirements
 
-- [ ] A collection of objects is managed by the server API
-- [ ] Every object in the collection has a unique `id` and at least two (2) additional properties
+- [x] A collection of objects is managed by the server API
+- [x] Every object in the collection has a unique `id` and at least two (2) additional properties
 
 * Interactions with the data are provided by a `class` with at least:
 
-  - [ ] a `static` method to **create** a new resource.
-  - [ ] a `static` method to **read** existing resources (either all or one at a time).
-  - [ ] a `static` method to **update** an existing resource.
-  - [ ] a `static` method to **delete** an existing resource.
+  - [x] a `static` method to **create** a new resource.
+  - [x] a `static` method to **read** existing resources (either all or one at a time).
+  - [x] a `static` method to **update** an existing resource.
+  - [x] a `static` method to **delete** an existing resource.
 
 ### Endpoint / Controller Requirements
 
 * The server has endpoints including at least:
-  - [ ] one `GET` method
-  - [ ] one `POST` method
-  - [ ] one `PATCH` method with a route parameter for `:id`
-  - [ ] one `UPDATE` method with a route parameter for `:id`
+  - [x] one `GET` method
+  - [x] one `POST` method
+  - [x] one `PATCH` method with a route parameter for `:id`
+  - [x] one `DELETE` method with a route parameter for `:id`
 
-- [ ] The server can parse JSON in incoming requests with `express.json()` middleware
-- [ ] All endpoints begin with `/api`
-- [ ] All endpoints use plural nouns (e.g. `/api/fellows`), NOT verbs (e.g. `/api/getFellows`)
-- [ ] Error codes are used appropriately (see below for error code information):
+- [x] The server can parse JSON in incoming requests with `express.json()` middleware
+- [x] All endpoints begin with `/api`
+- [x] All endpoints use plural nouns (e.g. `/api/fellows`), NOT verbs (e.g. `/api/getFellows`)
+- [x] Error codes are used appropriately (see below for error code information):
 
 ### Deployment Requirements
 
@@ -94,11 +94,11 @@ There are a total of 20 total requirements:
 
 ### Frontend Requirements
 
-- [ ] The server serves a frontend application at `/` using `express.static()` middleware.
-- [ ] The frontend application can send a `GET request` for and render the collection of resources from the server's "database"
-- [ ] The frontend application can send a `POST request` to create a new resource in the server's "database".
-- [ ] The frontend application can send a `PATCH request` to update an existing resource in the server's "database".
-- [ ] The frontend application can send a `DELETE request` to delete an existing resource in the server's "database".
+- [x] The server serves a frontend application at `/` using `express.static()` middleware.
+- [x] The frontend application can send a `GET request` for and render the collection of resources from the server's "database"
+- [x] The frontend application can send a `POST request` to create a new resource in the server's "database".
+- [x] The frontend application can send a `PATCH request` to update an existing resource in the server's "database".
+- [x] The frontend application can send a `DELETE request` to delete an existing resource in the server's "database".
 
 ## Error Codes:
 
