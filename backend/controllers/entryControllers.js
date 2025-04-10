@@ -32,7 +32,7 @@ const createEntry = (req, res) => {
     })
   const newEntry = Journal.create(text, imgSrc);
   return res
-    .status(200)
+    .status(201)
     .json(newEntry);
 }
 
