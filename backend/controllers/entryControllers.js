@@ -4,15 +4,15 @@
 // app.patch('/api/entries/:id', updateEntry);
 // app.delete('/api/entries/:id', deleteEntry);
 
-const Diary = require('../models/Diary.js')
+const Journal = require('../models/Journal.js')
 
 const serveEntries = (req, res) => {
-  res.send(Diary.list());
+  res.send(Journal.list());
 }
 
 const serveEntry = (req, res) => {
   const { id } = req.params;
-  const entry = Diary.find(parseInt(id));
+  const entry = Journal.find(parseInt(id));
   if (!entry) return res
     .status(404)
     .json({
@@ -30,7 +30,7 @@ const createEntry = (req, res) => {
     .json({
       "message": "Must provide `text` when creating an entry. Failed to create resource."
     })
-  const newEntry = Diary.create(text, imgSrc);
+  const newEntry = Journal.create(text, imgSrc);
   return res
     .status(200)
     .json(newEntry);
@@ -39,7 +39,7 @@ const createEntry = (req, res) => {
 const updateEntry = (req, res) => {
   const { id } = req.params;
   const { text, imgSrc } = req.body;
-  const editedEntry = Diary.editEntry(parseInt(id), text, imgSrc);
+  const editedEntry = Journal.editEntry(parseInt(id), text, imgSrc);
   if (!editedEntry) return res
     .status(404)
     .json({
@@ -52,7 +52,7 @@ const updateEntry = (req, res) => {
 
 const deleteEntry = (req, res) => {
   const { id } = req.params;
-  const isDeleted = Diary.delete(parseInt(id));
+  const isDeleted = Journal.delete(parseInt(id));
   if (!isDeleted) return res
     .status(404)
     .json({

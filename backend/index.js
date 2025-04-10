@@ -11,7 +11,7 @@ const {
 } = require('./controllers/entryControllers');
 
 const app = express();
-// const pathToFrontendDist = path.join(__dirname, '../frontend/dist');
+const pathToFrontendDist = path.join(__dirname, '../frontend/dist');
 
 ////////////////////////
 // Middleware
@@ -24,7 +24,7 @@ const logRoutes = (req, res, next) => {
   next();
 };
 
-// const serveStatic = express.static(pathToFrontendDist);
+const serveStatic = express.static(pathToFrontendDist);
 
 // A new middleware has appeared!
 // This parses incoming requests with JSON data in the body
@@ -32,12 +32,18 @@ const logRoutes = (req, res, next) => {
 const parseJSON = express.json();
 
 app.use(logRoutes);   // Print out every incoming request
-// app.use(serveStatic); // Serve static public/ content
+app.use(serveStatic); // Serve static public/ content
 app.use(parseJSON);   // Parses request body JSON
 
 ////////////////////////
 // Endpoints
 ////////////////////////
+
+
+// app.get('*', (req, res, next) => {
+//   if (req.originalUrl.startsWith('/api')) return next();
+//   res.sendFile(pathToFrontendDist);
+// });
 
 app.get('/api/entries', serveEntries);
 app.get('/api/entries/:id', serveEntry);
@@ -45,10 +51,6 @@ app.post('/api/entries', createEntry);
 app.patch('/api/entries/:id', updateEntry);
 app.delete('/api/entries/:id', deleteEntry);
 
-// app.get('*', (req, res, next) => {
-//   if (req.originalUrl.startsWith('/api')) return next();
-//   res.sendFile(pathToFrontendDist);
-// });
 
 
 const port = 8080;
